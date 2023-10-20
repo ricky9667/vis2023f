@@ -98,7 +98,7 @@ function generateAppleScoreboardTable() {
     }
     for (let j = 0; j < scoreList.length; j++) {
       var cell = row.insertCell();
-      cell.innerHTML = `<img src='./apples/${scoreList[j]}.svg' width='40' height='40'>`;
+      cell.innerHTML = `<img src='../apples/${scoreList[j]}.svg' width='40' height='40'>`;
     }
   } 
 
