@@ -38,6 +38,11 @@
       padding: 2px 8px;
     }
 
+    iframe {
+      border: 1px solid white;
+      background: white;
+    }
+
     .flipswitch {
       position: relative;
       background: white;
@@ -227,7 +232,7 @@
           </tr>
           <tr>
             <td rowspan="7" id="myTotal"></td>
-            <td><input type="checkbox" class="flipswitch" id="myCheckbox1"></td>
+            <td><input type="checkbox" class="flipswitch" id="myCheckbox1" checked=""></td>
             <td id='m1'>2</td>
             <td>Simple baseline - 產生 Dummy CSV 虛構成績表。</td>
           </tr>
@@ -248,13 +253,10 @@
     <!-- ------------------------------------------------>
     <div class="row hw12">
       <div class="col-md-12 twenty">Simple baseline - 產生 Dummy CSV 虛構成績表。</div>
-      <div id="dummy-csv-table">
-
-      </div>
+      <iframe src="./dummy_csv.html" width="100%" height="300px"></iframe>
     </div>
 
     <!-- ------------------------------------------------>
-
 
     <script>
       $(function () {
