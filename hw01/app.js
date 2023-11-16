@@ -70,37 +70,3 @@ function generateDummyCsvTable() {
 
   divElement.appendChild(table);
 }
-
-function generateAppleScoreboardTable() {
-  let divElement = document.getElementById("apple-scoreboard-table");
-  let table = document.createElement("table");
-
-  let header = table.createTHead();
-  let headerRow = header.insertRow();
-
-  for (let i = 0; i < headerList.length; i++) {
-    headerRow.insertCell().innerHTML = headerList[i];
-  }
-
-  for (let index = 1; index <= 120; index++) {
-    let row = table.insertRow();
-    let className = generateRandomClass();
-    let studentId = generateRandomId();
-    let studentName = "我是誰";
-    let githubId = generateRandomGithubId();
-    let scoreList = generateRandomScoreList();
-
-    let rowItems = [index, className, studentId, studentName, githubId];
-
-    for (let j = 0; j < rowItems.length; j++) {
-      var cell = row.insertCell();
-      cell.innerHTML = rowItems[j];
-    }
-    for (let j = 0; j < scoreList.length; j++) {
-      var cell = row.insertCell();
-      cell.innerHTML = `<img src='../apples/${scoreList[j]}.svg' width='40' height='40'>`;
-    }
-  } 
-
-  divElement.appendChild(table);
-}
