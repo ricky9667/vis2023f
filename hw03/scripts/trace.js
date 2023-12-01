@@ -1,5 +1,6 @@
 const icon = document.getElementById('icon');
 const jsonUrl = '../data/userLocationData.json';
+const traceContainer = document.getElementById('trace-container'); // 假設有一個元素用於容納移動痕跡
 let currentIndex = 0;
 let currentFloor = '1F'; // 新增 currentFloor 變數
 
@@ -16,10 +17,16 @@ function calculatePosition(x, y) {
 }
 
 function updateIconPosition(x, y) {
-  console.log(x, y);
   const { x: iconX, y: iconY } = calculatePosition(x, y);
   icon.style.left = `${iconX}%`;
   icon.style.top = `${iconY}%`;
+
+  // 繪製移動痕跡
+  const tracePoint = document.createElement('div');
+  tracePoint.className = 'trace-point';
+  tracePoint.style.left = `${iconX}%`;
+  tracePoint.style.top = `${iconY}%`;
+  traceContainer.appendChild(tracePoint);
 }
 
 function loadjson() {
